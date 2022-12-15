@@ -6,7 +6,36 @@ name: CI
 on:
   workflow_call:
     inputs:
-      cardName:
+      taskId:
+        required: true
+        type: string
+      unique_identifier:
+        required: true
+        type: string
+      client_ids:
+        required: true
+        type: string
+      environment:
+        required: true
+        type: string
+      ## Anti-fraud
+      konduto_private_key:
+        required: true
+        type: string
+      ## Means of payment
+      paypal:
+        required: true
+        type: string
+      mercadopago:
+        required: true
+        type: string
+      mundipagg:
+        required: true
+        type: string
+      payzen:
+        required: true
+        type: string
+      paymee:
         required: true
         type: string
 jobs:
@@ -17,4 +46,12 @@ jobs:
       - name: Run Hello world
         run: |
           echo Hello, world!
-          echo Card Name: ${{ github.event.inputs.cardName }}.
+          echo Card Name: ${{ github.event.inputs.taskId }}
+          echo Card Name: ${{ github.event.inputs.unique_identifier }}
+          echo Card Name: ${{ github.event.inputs.client_ids }}
+          echo Card Name: ${{ github.event.inputs.konduto_private_key }}
+          echo Card Name: ${{ github.event.inputs.paypal }}
+          echo Card Name: ${{ github.event.inputs.mercadopago }}
+          echo Card Name: ${{ github.event.inputs.mundipagg }}
+          echo Card Name: ${{ github.event.inputs.payzen }}
+          echo Card Name: ${{ github.event.inputs.paymee }}
