@@ -24,14 +24,19 @@ on:
         type: string
       ## Means of payment
       paypal:
+        required: true
         type: string
       mercadopago:
+        required: true
         type: string
       mundipagg:
+        required: true
         type: string
       payzen:
+        required: true
         type: string
       paymee:
+        required: true
         type: string
 jobs:
   build: 
@@ -44,6 +49,7 @@ jobs:
           echo taskId: ${{ github.event.inputs.taskId }}
           echo unique_identifier: ${{ github.event.inputs.unique_identifier }}
           echo client_ids: ${{ github.event.inputs.client_ids }}
+          echo environment: ${{ github.event.inputs.environment }}
           echo konduto_private_key: ${{ github.event.inputs.konduto_private_key }}
           echo paypal: ${{ github.event.inputs.paypal }}
           echo mercadopago: ${{ github.event.inputs.mercadopago }}
