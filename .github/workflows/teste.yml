@@ -24,19 +24,14 @@ on:
         type: string
       ## Means of payment
       paypal:
-        required: true
         type: string
       mercadopago:
-        required: true
         type: string
       mundipagg:
-        required: true
         type: string
       payzen:
-        required: true
         type: string
       paymee:
-        required: true
         type: string
 jobs:
   build: 
@@ -45,13 +40,13 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run Hello world
         run: |
-          echo Hello, world!
-          echo Card Name: ${{ github.event.inputs.taskId }}
-          echo Card Name: ${{ github.event.inputs.unique_identifier }}
-          echo Card Name: ${{ github.event.inputs.client_ids }}
-          echo Card Name: ${{ github.event.inputs.konduto_private_key }}
-          echo Card Name: ${{ github.event.inputs.paypal }}
-          echo Card Name: ${{ github.event.inputs.mercadopago }}
-          echo Card Name: ${{ github.event.inputs.mundipagg }}
-          echo Card Name: ${{ github.event.inputs.payzen }}
-          echo Card Name: ${{ github.event.inputs.paymee }}
+          echo Logs!
+          echo taskId: ${{ github.event.inputs.taskId }}
+          echo unique_identifier: ${{ github.event.inputs.unique_identifier }}
+          echo client_ids: ${{ github.event.inputs.client_ids }}
+          echo konduto_private_key: ${{ github.event.inputs.konduto_private_key }}
+          echo paypal: ${{ github.event.inputs.paypal }}
+          echo mercadopago: ${{ github.event.inputs.mercadopago }}
+          echo mundipagg: ${{ github.event.inputs.mundipagg }}
+          echo payzen: ${{ github.event.inputs.payzen }}
+          echo paymee: ${{ github.event.inputs.paymee }}
