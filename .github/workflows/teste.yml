@@ -17,4 +17,4 @@ jobs:
       - name: Run Hello world
         run: |
           echo Hello, world!
-          echo Card Name: ${{ github.event.inputs.taskId }}.
+          echo Card Name: ${{ github.event.inputs.cardName }}.
