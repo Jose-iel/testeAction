@@ -12,6 +12,30 @@ on:
       environment:
         required: true
         type: string
+      unique_identifier: 
+        required: true
+        type: string
+      client_ids:
+        required: true
+        type: string
+      konduto_private_key: 
+        required: true
+        type: string
+      paypal:
+        required: true
+        type: string
+      mercadopago:
+        required: true
+        type: string
+      mundipagg:
+        required: true
+        type: string
+      payzen:
+        required: true
+        type: string
+      paymee:
+        required: true
+        type: string
 jobs:
   build: 
     runs-on: ubuntu-latest
@@ -21,4 +45,12 @@ jobs:
         run: |
           echo Logs!
           echo taskId: ${{ inputs.taskId }}
-          echo taskId: ${{ inputs.environment }}
+          echo environment: ${{ inputs.environment }}
+          echo unique_identifier: ${{ inputs.unique_identifier }}
+          echo client_ids: ${{ inputs.client_ids }}
+          echo konduto_private_key: ${{ inputs.konduto_private_key }}
+          echo paypal: ${{ inputs.paypal }}
+          echo mercadopago: ${{ inputs.mercadopago }}
+          echo mundipagg: ${{ inputs.mundipagg }}
+          echo payzen: ${{ inputs.payzen }}
+          echo paymee: ${{ inputs.paymee }}
