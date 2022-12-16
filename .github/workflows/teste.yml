@@ -6,40 +6,15 @@ name: CI
 on:
   workflow_call:
     inputs:
-      unique_identifier:
-        required: true
-        type: string
-      client_ids:
-        required: true
-        type: string
-      environment:
-        required: true
-        type: string
-      ## Anti-fraud
-      konduto_private_key:
-        required: true
-        type: string
-      ## Means of payment
-      paypal:
-        required: true
-        type: string
-      mercadopago:
-        required: true
-        type: string
-      mundipagg:
-        required: true
-        type: string
-      payzen:
-        required: true
-        type: string
-      paymee:
-        required: true
-        type: string
-    secrets:
-      envPAT:
-        required: true
       taskId:
         required: true
+        type: string
+      
+#     secrets:
+#       envPAT:
+#         required: true
+#       taskId:
+#         required: true
 jobs:
   build: 
     runs-on: ubuntu-latest
@@ -48,14 +23,4 @@ jobs:
       - name: Run Hello world
         run: |
           echo Logs!
-          echo taskId: ${{ secrets.taskId }}
-          echo envPAT: ${{ secrets.envPAT }}
-          echo unique_identifier: ${{ github.event.inputs.unique_identifier }}
-          echo client_ids: ${{ github.event.inputs.client_ids }}
-          echo environment: ${{ github.event.inputs.environment }}
-          echo konduto_private_key: ${{ github.event.inputs.konduto_private_key }}
-          echo paypal: ${{ github.event.inputs.paypal }}
-          echo mercadopago: ${{ github.event.inputs.mercadopago }}
-          echo mundipagg: ${{ github.event.inputs.mundipagg }}
-          echo payzen: ${{ github.event.inputs.payzen }}
-          echo paymee: ${{ github.event.inputs.paymee }}
+          echo taskId: ${{ inputs.taskId }}
