@@ -9,12 +9,9 @@ on:
       taskId:
         required: true
         type: string
-      
-#     secrets:
-#       envPAT:
-#         required: true
-#       taskId:
-#         required: true
+      environment:
+        required: true
+        type: string
 jobs:
   build: 
     runs-on: ubuntu-latest
@@ -24,3 +21,4 @@ jobs:
         run: |
           echo Logs!
           echo taskId: ${{ inputs.taskId }}
+          echo taskId: ${{ inputs.environment }}
