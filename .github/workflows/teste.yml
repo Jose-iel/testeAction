@@ -4,6 +4,51 @@ name: CI
 
 # Controls when the workflow will run
 on:
+  workflow_dispatch:
+    inputs:
+      taskId:
+        description: 'Task ID'
+        required: true
+      unique_identifier:
+        description: 'Domain Unique Identifier'
+        required: true
+      client_ids:
+        description: 'Whitelabel client id. Ex.: 10940,10941,10942'
+        required: true
+      environment:
+        type: choice
+        required: true
+        description: 'Whitelabel development use cabal'
+        default: 'cabal'
+        options: 
+        - cabal
+        - live
+        - staging
+      ## Anti-fraud
+      konduto_private_key:
+        description: 'Konduto private key'
+        required: true
+      ## Means of payment
+      paypal:
+        description: 'PayPal Private Key Identifier'
+        default: 'whitelabel'
+        required: true
+      mercadopago:
+        description: 'MercadoPago Private Key Identifier'
+        default: 'nofluxo'
+        required: true
+      mundipagg:
+        description: 'MundiPagg Private Key Identifier'
+        default: 'whitelabel'
+        required: true
+      payzen:
+        description: 'Payzen Private Key Identifier'
+        default: 'whitelabel'
+        required: true
+      paymee:
+        description: 'Paymee Private Key Identifier'
+        default: 'wl_pix'
+        required: true
   workflow_call:
     inputs:
       taskId:
